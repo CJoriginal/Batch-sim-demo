@@ -1,0 +1,55 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) HD8490 (ID=0x6771)
+    Vendor:   ATI
+    VRAM:     1010 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.032 seconds
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.5\v0.5_Data\Managed\System.dll (this message is harmless)
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 12.566929 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 164.
+Total: 0.517081 ms (FindLiveObjects: 0.036826 ms CreateObjectMapping: 0.035921 ms MarkObjects: 0.430750 ms  DeleteObjects: 0.012074 ms)
+
+Information Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.639085 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 186.
+Total: 0.422902 ms (FindLiveObjects: 0.032600 ms CreateObjectMapping: 0.028072 ms MarkObjects: 0.351362 ms  DeleteObjects: 0.009961 ms)
+
+Tutorial Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.406957 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 270.
+Total: 0.456408 ms (FindLiveObjects: 0.036826 ms CreateObjectMapping: 0.027469 ms MarkObjects: 0.360417 ms  DeleteObjects: 0.030487 ms)
+
+Game Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+

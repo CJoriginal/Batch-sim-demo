@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2db6b5df2f5f73b49a40c9f3fc2e8db4
+timeCreated: 1430317008
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mySquare: {instanceID: 0}
+  - prefabToSpawn: {fileID: 157084, guid: 1bd36d7237fe17644bf1bfa9f709b2e8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
