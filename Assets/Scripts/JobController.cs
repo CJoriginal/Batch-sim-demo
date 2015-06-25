@@ -12,7 +12,6 @@ public class JobController : MonoBehaviour {
 
 	private Color mouseOverColor;
 	private Color originalColor;
-	private Vector3 scale;
 	private Vector3 position;
 	private Vector3 location;
 
@@ -40,7 +39,9 @@ public class JobController : MonoBehaviour {
 	public bool inJob;
 
 	public float speedMod;
-	
+
+	public GameObject game;
+
 	public Transform jobTransform;
 	public int value;
 	public Vector3 size;
@@ -60,12 +61,13 @@ public class JobController : MonoBehaviour {
 		originalColor = GetComponent<Renderer> ().material.color;
 
 		speed = 0.05f;
-		scale = jobTransform.localScale;
 
 		lifeTime = 5.0f;
 		time = 0.0f;
 
 		location = jobTransform.position;
+
+		game = GameObject.Find ("Game Controller");
 
 		startJob = false;
 		spawnMove = false;
@@ -95,7 +97,7 @@ public class JobController : MonoBehaviour {
 
 		if (isSpawn) {
 			spawnMove = true;
-			GetComponent<Rigidbody2D>().WakeUp();
+			GetComponent<Rigidbody2D> ().WakeUp ();
 			if (lifeTime <= 0) {
 				Destroy (gameObject);
 			}
@@ -103,6 +105,12 @@ public class JobController : MonoBehaviour {
 			if (!dragging) {
 				lifeTime -= Time.deltaTime;
 			}
+		} else if (work) {
+			GetComponent<Rigidbody2D> ().isKinematic = true;
+			GetComponent<BoxCollider2D> ().isTrigger = false;
+		} else {
+			GetComponent<Rigidbody2D> ().isKinematic = false;
+			GetComponent<BoxCollider2D> ().isTrigger = false;
 		}
 
 		if (isWorking) {
@@ -114,6 +122,8 @@ public class JobController : MonoBehaviour {
 			startJob = true;
 			isSpawn = false;
 		}
+
+		GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
 	}
 
 	void FixedUpdate() {
@@ -151,10 +161,10 @@ public class JobController : MonoBehaviour {
 			}
 		} else {
 			if (spawnMove) {
+				if(!spawnCheck){
+					location = new Vector2 (10.0f, -7.2f);
+				}
 				if (isSpawn) {
-					if(!spawnCheck){
-						location = new Vector2 (10.0f, -7.2f);
-					}
 					transform.position = location;
 					jobTransform.localScale = new Vector3 (0.5f, 0.5f, 1);
 					GetComponent<Rigidbody2D>().Sleep();
@@ -205,6 +215,9 @@ public class JobController : MonoBehaviour {
 			}
 
 			if (work) {			
+
+				GetComponent<Rigidbody2D>().isKinematic = true;
+
 				position = jobTransform.position;
 			
 				position.y -= speed;
@@ -279,37 +292,6 @@ public class JobController : MonoBehaviour {
 						speed = col.gameObject.GetComponent<JobController>().speed;
 					}
 				}
-
-				if (inJob && !dragging) {
-					float colJobPosX = col.gameObject.GetComponent<JobController>().jobBoundsPosX;
-					float colJobSizeX = col.gameObject.GetComponent<JobController>().jobBoundsSizeX;
-					
-					float colLeft = colJobPosX - colJobSizeX;
-					float colRight = colJobPosX + colJobSizeX;
-					
-					float jLeft = jobBoundsPosX - jobBoundsSizeX;
-					float jRight = jobBoundsPosX + jobBoundsSizeX;
-					
-					float lLeft = laneBoundsPos;
-					float lRight = laneBoundsPos + laneBoundsSize;
-					
-					Vector3 pos = jobTransform.position;
-					
-					if (colLeft > jLeft || colRight < jRight) {
-						if (colLeft > jLeft) {
-							if (lLeft <= jLeft){
-								pos.x = pos.x - 0.01f;
-							}
-						} 
-						if(colRight < jRight){
-							if (lRight >= jRight){
-								pos.x = pos.x + 0.01f;
-							}
-						}
-					}
-				
-					jobTransform.position = pos;
-				}
 			}
 		}
 	}
@@ -330,6 +312,8 @@ public class JobController : MonoBehaviour {
 				ScoreBoundary.instance.score += value * ScoreBoundary.instance.multiplier;
 				ScoreBoundary.instance.multiplier += 1;
 				ScoreBoundary.instance.MultitimeStarter ();
+
+				GameController.instance.completeJobs += 1;
 				
 				Destroy (gameObject);
 			}

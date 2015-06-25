@@ -6,9 +6,13 @@ using System.Collections;
 /// </summary>
 public class SceneManager : MonoBehaviour {
 
+	public static SceneManager instance;
+
 	private string[] scenes;
 	
 	void Start(){
+		instance = this;
+
 		Debug.Log ("Main Menu Loaded");
 
 		scenes = new string[5];
@@ -36,7 +40,7 @@ public class SceneManager : MonoBehaviour {
 		}
 
 
-		float fadeTime = GameObject.Find("Button").GetComponent<Fading>().BeginFade(1);
+		float fadeTime = Fading.instance.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
 
 		Debug.Log ("Loading Level: " + scenes [index]);

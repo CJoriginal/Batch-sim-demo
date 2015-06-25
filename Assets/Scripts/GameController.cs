@@ -6,6 +6,8 @@ using System.Collections;
 /// </summary>
 public class GameController : MonoBehaviour {
 
+	public static GameController instance;
+
 	private float spawnTimer;
 	private float speed;
 	private Vector2[] spawnLocation = new Vector2[5];
@@ -15,12 +17,15 @@ public class GameController : MonoBehaviour {
 	private GameObject job;
 
 	public int totalJobs;
+	public int completeJobs;
 	public GameObject[] prefabToSpawn;
 	public int countSpawn;
 
 	
 	// Use this for initialization
 	void Start () {
+		instance = this;
+
 		spawnTimer = 5.0f;
 		countSpawn = 0;
 		spawnLocation[0] = new Vector2 (10.0f, 0.3f);
@@ -30,6 +35,7 @@ public class GameController : MonoBehaviour {
 		spawnLocation[4] = new Vector2 (10.0f, -5.7f);
 
 		totalJobs = 0;
+		completeJobs = 0;
 
 		queue = new GameObject ();
 		queue.name = "Queue";

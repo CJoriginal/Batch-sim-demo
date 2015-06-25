@@ -46,8 +46,14 @@ public class ScoreBoundary : MonoBehaviour {
 		if(TimerScript.gameOver){
 			Debug.Log ("GAME OVER");
 
+			int totalJobs = GameController.instance.totalJobs;
+			int completeJobs = GameController.instance.completeJobs;
+
 			PlayerPrefs.SetInt ("Score", score);
-			game.GetComponent<SceneManager>().NextScene();
+			PlayerPrefs.SetInt ("Total Jobs", totalJobs);
+			PlayerPrefs.SetInt ("Complete Jobs", completeJobs);
+
+			SceneManager.instance.NextScene();
 		}
 
 		if (multiTime >= 6.0f) {
