@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\LaneBoundary.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
      <Compile Include="Assets\Scripts\ScoreBoundary.cs" />
+     <Compile Include="Assets\Scripts\Soundtrack.cs" />
      <Compile Include="Assets\Scripts\TimerScript.cs" />
      <Compile Include="Assets\Scripts\TutorialScript.cs" />
  <Reference Include="UnityEngine.UI">

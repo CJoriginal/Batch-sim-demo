@@ -30,7 +30,7 @@ public class TutorialScript : MonoBehaviour {
 
 	void Update(){
 
-		if (timeGame > 3.0f) {
+		if (timeGame > 15.0f) {
 			if(gameSprite > 2){
 				gameSprite = 0;
 			}
@@ -40,7 +40,7 @@ public class TutorialScript : MonoBehaviour {
 			timeGame = 0;
 		}
 
-		if (timePrior > 5.0f) {
+		if (timePrior > 10.0f) {
 			if(prioritySprite > 2){
 				prioritySprite = 0;
 			}
@@ -50,7 +50,7 @@ public class TutorialScript : MonoBehaviour {
 			timePrior = 0;
 		}
 
-		timeGame += Time.deltaTime;
-		timePrior += Time.deltaTime;
+		timeGame += 0.2f;
+		timePrior += 0.2f;
 	}
 }

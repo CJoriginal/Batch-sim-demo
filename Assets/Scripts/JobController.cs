@@ -15,6 +15,8 @@ public class JobController : MonoBehaviour {
 	private Vector3 position;
 	private Vector3 location;
 
+	private string name;
+
 	private float speed;
 	public float lifeTime;
 	private float time;
@@ -38,8 +40,6 @@ public class JobController : MonoBehaviour {
 	public bool outOfBounds;
 	public bool inJob;
 
-	public float speedMod;
-
 	public GameObject game;
 
 	public Transform jobTransform;
@@ -60,7 +60,7 @@ public class JobController : MonoBehaviour {
 		mouseOverColor = Color.blue;
 		originalColor = GetComponent<Renderer> ().material.color;
 
-		speed = 0.05f;
+		speed = 0.01f;
 
 		lifeTime = 5.0f;
 		time = 0.0f;
@@ -68,6 +68,8 @@ public class JobController : MonoBehaviour {
 		location = jobTransform.position;
 
 		game = GameObject.Find ("Game Controller");
+
+		name = GetComponent<SpriteRenderer> ().sprite.name;
 
 		startJob = false;
 		spawnMove = false;
@@ -115,7 +117,7 @@ public class JobController : MonoBehaviour {
 
 		if (isWorking) {
 			work = true;
-			speed = 0.01f / speedMod;
+			speed = 0.01f;
 		}
 
 		if ((laneBoundsPos + laneBoundsSize) > (jobBoundsPosX + jobBoundsSizeX) && (laneBoundsPos - laneBoundsSize) < (jobBoundsPosX - jobBoundsSizeX)) {
@@ -132,7 +134,7 @@ public class JobController : MonoBehaviour {
 
 		if (dragging) {
 
-			speed = 0.05f;
+			speed = 0.01f;
 
 			if (!work) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -273,16 +275,20 @@ public class JobController : MonoBehaviour {
 	
 				if (this.gameObject.layer == 12) {
 					value = 10;
-					speedMod = 1.0f;
 				} else if (this.gameObject.layer == 11) {
 					value = 20;
-					speedMod = 1.5f;
 				} else if (this.gameObject.layer == 10) {
 					value = 30;
-					speedMod = 2.0f;
 				}
 
-				speed = speed / speedMod;
+				if (name.Contains("Green")){
+					value = value * 1;
+				} else if (name.Contains("Yellow")) {
+					value = value * 2;
+				}
+				else if (name.Contains("Red")) {
+					value = value * 3;
+				} 
 			}
 			if (col.gameObject.tag == "Job"){
 				if(!isSpawn && !isWorking) {
