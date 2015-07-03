@@ -42,6 +42,8 @@ public class JobController : MonoBehaviour {
 
 	public GameObject game;
 
+	public Sprite[] sprite;
+
 	public Transform jobTransform;
 	public int value;
 	public Vector3 size;
@@ -52,6 +54,8 @@ public class JobController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		int rand = Random.Range (0, 3);
+
 		isSpawn = true;
 		jobExit = false;
 		isWorking = false;
@@ -59,6 +63,8 @@ public class JobController : MonoBehaviour {
 
 		mouseOverColor = Color.blue;
 		originalColor = GetComponent<Renderer> ().material.color;
+
+		GetComponent<SpriteRenderer> ().sprite = sprite[rand];
 
 		speed = 0.01f;
 
@@ -238,30 +244,41 @@ public class JobController : MonoBehaviour {
 		}
 	}
 
+	public void SetSpeed(float vel){
+		speed = vel;
+	}
 
 	void OnMouseEnter()
 	{
-		GetComponent<Renderer>().material.color = mouseOverColor;
+		if (Application.loadedLevel != 5) {
+			GetComponent<Renderer> ().material.color = mouseOverColor;
+		}
 	}
 	
 	void OnMouseExit()
 	{
-		GetComponent<Renderer>().material.color = originalColor;
+		if (Application.loadedLevel != 5) {
+			GetComponent<Renderer> ().material.color = originalColor;
+		}
 	}
 	
 	void OnMouseDown()
 	{
-		distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-		exitLoc.y = jobTransform.position.y;
-		exitLoc.x = jobTransform.position.x;
-		exitLoc.z = 0f;
+		if (Application.loadedLevel != 5) {
+			distance = Vector3.Distance (transform.position, Camera.main.transform.position);
+			exitLoc.y = jobTransform.position.y;
+			exitLoc.x = jobTransform.position.x;
+			exitLoc.z = 0f;
 
-		dragging = true;
+			dragging = true;
+		}
 	}
 	
 	void OnMouseUp()
 	{
-		dragging = false;
+		if (Application.loadedLevel != 5) {
+			dragging = false;
+		}
 	}
 
 

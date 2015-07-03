@@ -12,13 +12,17 @@ Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0
 Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9a\v0.9a_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9a\v0.9a_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9a\v0.9a_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.034 seconds
+- Completed reload, in  0.110 seconds
 desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9a\v0.9a_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9a\v0.9a_Data\Managed\System.dll (this message is harmless)
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
 Main Menu Loaded
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
@@ -36,10 +40,10 @@ Loading Level: Info Scene
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 13.307425 ms
+UnloadTime: 13.177773 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 202.
-Total: 0.652919 ms (FindLiveObjects: 0.040147 ms CreateObjectMapping: 0.034109 ms MarkObjects: 0.565984 ms  DeleteObjects: 0.010866 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 203.
+Total: 0.637819 ms (FindLiveObjects: 0.041957 ms CreateObjectMapping: 0.033807 ms MarkObjects: 0.549979 ms  DeleteObjects: 0.010263 ms)
 
 Main Menu Loaded
  
@@ -54,10 +58,10 @@ Loading Level: Tutorial Menu
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.192340 ms
+UnloadTime: 0.666495 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 225.
-Total: 0.556626 ms (FindLiveObjects: 0.031695 ms CreateObjectMapping: 0.028374 ms MarkObjects: 0.486897 ms  DeleteObjects: 0.009055 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 226.
+Total: 0.226692 ms (FindLiveObjects: 0.037429 ms CreateObjectMapping: 0.008150 ms MarkObjects: 0.177490 ms  DeleteObjects: 0.003320 ms)
 
 Main Menu Loaded
  
@@ -76,10 +80,10 @@ Loading Level: Game
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.840071 ms
+UnloadTime: 0.643856 ms
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 315.
-Total: 0.467880 ms (FindLiveObjects: 0.029883 ms CreateObjectMapping: 0.035015 ms MarkObjects: 0.378228 ms  DeleteObjects: 0.024148 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 370.
+Total: 0.257784 ms (FindLiveObjects: 0.016602 ms CreateObjectMapping: 0.018111 ms MarkObjects: 0.209487 ms  DeleteObjects: 0.013281 ms)
 
 Game Loaded
  
@@ -89,417 +93,17 @@ Main Menu Loaded
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-GAME OVER
+No Input. Loading Demo.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-GAME OVER
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: Game
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Loading Level: End Scene
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.220715 ms
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.178139 ms
 
-Unloading 191 unused Assets to reduce memory usage. Loaded Objects now: 293.
-Total: 0.816526 ms (FindLiveObjects: 0.062786 ms CreateObjectMapping: 0.050108 ms MarkObjects: 0.528553 ms  DeleteObjects: 0.174172 ms)
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 327.
+Total: 0.780294 ms (FindLiveObjects: 0.060974 ms CreateObjectMapping: 0.059767 ms MarkObjects: 0.598578 ms  DeleteObjects: 0.058861 ms)
 
 Main Menu Loaded
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Credits Loaded
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Current Level: End Scene
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
@@ -508,10 +112,14 @@ Loading Level: Main Menu
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.047448 ms
+UnloadTime: 1.102373 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 285.
-Total: 0.753136 ms (FindLiveObjects: 0.056447 ms CreateObjectMapping: 0.049202 ms MarkObjects: 0.633600 ms  DeleteObjects: 0.012376 ms)
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 351.
+Total: 0.854249 ms (FindLiveObjects: 0.053126 ms CreateObjectMapping: 0.055843 ms MarkObjects: 0.693964 ms  DeleteObjects: 0.049806 ms)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Main Menu Loaded
  
@@ -526,10 +134,10 @@ Loading Credits
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.122007 ms
+UnloadTime: 1.037173 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 282.
-Total: 0.753136 ms (FindLiveObjects: 0.055843 ms CreateObjectMapping: 0.050108 ms MarkObjects: 0.633902 ms  DeleteObjects: 0.011470 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 337.
+Total: 0.769126 ms (FindLiveObjects: 0.057050 ms CreateObjectMapping: 0.054333 ms MarkObjects: 0.643554 ms  DeleteObjects: 0.012677 ms)
 
 Main Menu Loaded
  
@@ -540,14 +148,36 @@ Loading Level: Main Menu
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.935157 ms
+UnloadTime: 1.154594 ms
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 285.
-Total: 0.783926 ms (FindLiveObjects: 0.056749 ms CreateObjectMapping: 0.051617 ms MarkObjects: 0.661975 ms  DeleteObjects: 0.012074 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 351.
+Total: 0.808065 ms (FindLiveObjects: 0.057956 ms CreateObjectMapping: 0.055843 ms MarkObjects: 0.679475 ms  DeleteObjects: 0.012677 ms)
 
 Main Menu Loaded
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Current Level: Main Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Loading Level: Info Scene
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.148557 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 329.
+Total: 0.802028 ms (FindLiveObjects: 0.059465 ms CreateObjectMapping: 0.054937 ms MarkObjects: 0.674041 ms  DeleteObjects: 0.012376 ms)
 
 Main Menu Loaded
  

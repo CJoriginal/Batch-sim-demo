@@ -32,7 +32,7 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if (timestamp < 0) {
+		if (timestamp < 0 && Application.loadedLevel != 5) {
 			DemoScene();
 		}
 
@@ -69,6 +69,10 @@ public class SceneManager : MonoBehaviour {
 		Application.LoadLevel ("Credits");
 	}
 		
+	public void Exit() {
+		Application.Quit();
+	}
+
 	IEnumerator ChangeLevel() {
 		index = Application.loadedLevel;
 		Debug.Log ("Current Level: " + Application.loadedLevelName);
