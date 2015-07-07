@@ -19,28 +19,29 @@ public class SceneManager : MonoBehaviour {
 
 		Debug.Log ("Main Menu Loaded");
 
-		scenes = new string[5];
+		scenes = new string[6];
 
 		index = 0;
 
-		scenes [0] = "Main Menu";
-		scenes [1] = "Info Scene";
-		scenes [2] = "Tutorial Menu";
-		scenes [3] = "Game";
-		scenes [4] = "End Scene";
+		scenes [0] = "Demo Scene";
+		scenes [1] = "Main Menu";
+		scenes [2] = "Info Scene";
+		scenes [3] = "Tutorial Menu";
+		scenes [4] = "Game";
+		scenes [5] = "End Scene";
 
 	}
 
 	void Update () {
-		if (timestamp < 0 && Application.loadedLevel != 5) {
+		if (timestamp < 0 && Application.loadedLevel != 0) {
 			DemoScene();
 		}
 
-		if (Input.anyKeyDown && Application.loadedLevel == 5) {
-			LoadScene ();
+		if (Input.anyKeyDown && Application.loadedLevel == 0) {
+			NextScene();
 		}
 		
-		if (Input.anyKeyDown || Input.GetAxis("Mouse X")>0 || Input.GetAxis("Mouse X")<0){
+		if (Input.anyKeyDown || Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse X") < 0){
 			timestamp = 30.0f;
 		}else{
 			timestamp -= Time.deltaTime;
@@ -65,8 +66,8 @@ public class SceneManager : MonoBehaviour {
 
 	public void CreditScene() {
 		Debug.Log ("Loading Credits");
-		
-		Application.LoadLevel ("Credits");
+
+		Application.LoadLevel("Credits");
 	}
 		
 	public void Exit() {
@@ -79,10 +80,9 @@ public class SceneManager : MonoBehaviour {
 
 		index++;
 
-		if (index > 4) {
-			index = 0;
+		if (index > 5) {
+			index = 1;
 		}
-
 
 		float fadeTime = Fading.instance.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
@@ -93,11 +93,16 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	IEnumerator LoadLevel() {
+
+		if (Application.loadedLevel == 6) {
+			index = 1;
+		}
+
 		Debug.Log ("Loading Level: " + scenes [index]);
 		
 		float fadeTime = Fading.instance.BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
-		
+
 		Application.LoadLevel (scenes[index]);
 	}
 }

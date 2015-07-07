@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		instance = this;
 
-		spawnTimer = 5.0f;
+		spawnTimer = 6.0f;
 		countSpawn = 0;
 		spawnLocation[0] = new Vector2 (10.0f, 0.3f);
 		spawnLocation[1] = new Vector2 (10.0f, -1.2f);
@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour {
 			rand = Random.Range(0, 8);
 			job = Instantiate(prefabToSpawn[rand], spawnLocation[x], Quaternion.identity) as GameObject;
 			job.gameObject.name = "Job " + totalJobs;
+			job.GetComponent<Rigidbody2D>().isKinematic = true;
 			job.transform.parent = queue.transform;
 			totalJobs++;
 		}
@@ -62,8 +63,9 @@ public class GameController : MonoBehaviour {
 			job = Instantiate(prefabToSpawn[rand], spawnLocation[countSpawn], Quaternion.identity) as GameObject;
 			job.gameObject.name = "Job " + totalJobs;
 			job.transform.parent = queue.transform;
+			job.GetComponent<Rigidbody2D>().isKinematic = true;
 			totalJobs++;
-			spawnTimer = 1.0f;
+			spawnTimer = 1.5f;
 			countSpawn++;
 		}
 

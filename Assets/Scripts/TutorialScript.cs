@@ -50,7 +50,7 @@ public class TutorialScript : MonoBehaviour {
 			timePrior = 0;
 		}
 
-		timeGame += 0.2f;
-		timePrior += 0.2f;
+		timeGame += 0.02f;
+		timePrior += 0.02f;
 	}
 }

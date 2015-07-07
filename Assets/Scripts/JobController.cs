@@ -20,11 +20,14 @@ public class JobController : MonoBehaviour {
 	private float speed;
 	public float lifeTime;
 	private float time;
+	private float jumpTime;
 
 	private bool work;
 	private bool spawnMove;
 	private bool touchWork;
 	private bool spawnCheck;
+	private bool touchEnd;
+	public bool moving;
 
 	public float laneBoundsPos;
 	public float laneBoundsSize;
@@ -60,6 +63,8 @@ public class JobController : MonoBehaviour {
 		jobExit = false;
 		isWorking = false;
 		dragging = false;
+		touchEnd = false;
+		moving = true;
 
 		mouseOverColor = Color.blue;
 		originalColor = GetComponent<Renderer> ().material.color;
@@ -68,8 +73,9 @@ public class JobController : MonoBehaviour {
 
 		speed = 0.01f;
 
-		lifeTime = 5.0f;
+		lifeTime = 6.0f;
 		time = 0.0f;
+		jumpTime = 3.0f;
 
 		location = jobTransform.position;
 
@@ -105,6 +111,7 @@ public class JobController : MonoBehaviour {
 
 		if (isSpawn) {
 			spawnMove = true;
+			moving = true;
 			GetComponent<Rigidbody2D> ().WakeUp ();
 			if (lifeTime <= 0) {
 				Destroy (gameObject);
@@ -119,6 +126,10 @@ public class JobController : MonoBehaviour {
 		} else {
 			GetComponent<Rigidbody2D> ().isKinematic = false;
 			GetComponent<BoxCollider2D> ().isTrigger = false;
+
+			if(!dragging){
+				moving = false;
+			}
 		}
 
 		if (isWorking) {
@@ -146,7 +157,7 @@ public class JobController : MonoBehaviour {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				Vector3 rayPoint = ray.GetPoint (distance);
 
-				if(isSpawn || !startJob){
+				if(isSpawn || !startJob || !touchEnd){
 					transform.position = rayPoint;
 					jobTransform.localScale = size;
 				}
@@ -172,18 +183,18 @@ public class JobController : MonoBehaviour {
 				if(!spawnCheck){
 					location = new Vector2 (10.0f, -7.2f);
 				}
-				if (isSpawn) {
+				if (isSpawn || touchEnd) {
 					transform.position = location;
 					jobTransform.localScale = new Vector3 (0.5f, 0.5f, 1);
 					GetComponent<Rigidbody2D>().Sleep();
 					spawnMove = false;
 					isSpawn = false;
 					speed = 0f;
+					touchEnd = false;
 				}
 			}
 
 			if (!isSpawn && !isWorking) {
-
 				position = jobTransform.localPosition;
 				position.y -= speed;
 				transform.position = position;
@@ -265,12 +276,14 @@ public class JobController : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (Application.loadedLevel != 5) {
-			distance = Vector3.Distance (transform.position, Camera.main.transform.position);
-			exitLoc.y = jobTransform.position.y;
-			exitLoc.x = jobTransform.position.x;
-			exitLoc.z = 0f;
+			if(moving){
+				distance = Vector3.Distance (transform.position, Camera.main.transform.position);
+				exitLoc.y = jobTransform.position.y;
+				exitLoc.x = jobTransform.position.x;
+				exitLoc.z = 0f;
 
-			dragging = true;
+				dragging = true;
+			}
 		}
 	}
 	
@@ -298,22 +311,27 @@ public class JobController : MonoBehaviour {
 					value = 30;
 				}
 
-				if (name.Contains("Green")){
+				if (name.Contains ("Green")) {
 					value = value * 1;
-				} else if (name.Contains("Yellow")) {
+				} else if (name.Contains ("Yellow")) {
 					value = value * 2;
-				}
-				else if (name.Contains("Red")) {
+				} else if (name.Contains ("Red")) {
 					value = value * 3;
 				} 
 			}
-			if (col.gameObject.tag == "Job"){
-				if(!isSpawn && !isWorking) {
+			if (col.gameObject.tag == "Job") {
+				if (!isSpawn && !isWorking) {
 
-					if(col.gameObject.GetComponent<JobController>().isWorking || col.gameObject.GetComponent<JobController>().touchWork){
+					if (col.gameObject.GetComponent<JobController> ().isWorking || col.gameObject.GetComponent<JobController> ().touchWork) {
 						touchWork = true;
-						speed = col.gameObject.GetComponent<JobController>().speed;
+						speed = col.gameObject.GetComponent<JobController> ().speed;
 					}
+				}
+			}
+		} else {
+			if (col.gameObject.tag == "Queue End") {
+				if (moving && dragging) {
+					touchEnd = true;
 				}
 			}
 		}
@@ -341,6 +359,31 @@ public class JobController : MonoBehaviour {
 				Destroy (gameObject);
 			}
 		}
+
+		/*if (col.gameObject.tag == "Lane" && !dragging) {
+			Vector3 pos = jobTransform.position;
+
+			if(col.gameObject.name == "Lane 6"){
+				pos.x = 5.03f;
+			}
+			if(col.gameObject.name == "Lane 5"){
+				pos.x = 2.94f;
+			}
+			if(col.gameObject.name == "Lane 4"){
+				pos.x = 0.87f;
+			}
+			if(col.gameObject.name == "Lane 3"){
+				pos.x = -1.15f;
+			}
+			if(col.gameObject.name == "Lane 2"){
+				pos.x = -3.13f;
+			}
+			if(col.gameObject.name == "Lane 1"){
+				pos.x = -5.15f;
+			}
+
+			jobTransform.position = pos;
+		}*/
 
 		if(col.gameObject.tag == "Respawn"){
 			isSpawn = true;

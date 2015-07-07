@@ -12,7 +12,7 @@ Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0
 Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9b\v0.9b_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9b\v0.9b_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\asg45239\Documents\Projects\Batch Sim Demo\Builds\v0.9b\v0.9b_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.033 seconds
+- Completed reload, in  0.112 seconds
 desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -23,7 +23,87 @@ Main Menu Loaded
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
+Current Level: Demo Scene
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Loading Level: Main Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.172041 ms
+
+Unloading 137 unused Assets to reduce memory usage. Loaded Objects now: 225.
+Total: 0.389699 ms (FindLiveObjects: 0.028978 ms CreateObjectMapping: 0.028374 ms MarkObjects: 0.265031 ms  DeleteObjects: 0.066106 ms)
+
 Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Current Level: Main Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Loading Level: Info Scene
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.139515 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 203.
+Total: 0.306688 ms (FindLiveObjects: 0.022035 ms CreateObjectMapping: 0.012979 ms MarkObjects: 0.266239 ms  DeleteObjects: 0.004829 ms)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Current Level: Info Scene
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Loading Level: Tutorial Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.505009 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 226.
+Total: 0.311517 ms (FindLiveObjects: 0.023846 ms CreateObjectMapping: 0.015696 ms MarkObjects: 0.265937 ms  DeleteObjects: 0.005131 ms)
+
+Main Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Tutorial Menu Loaded
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Current Level: Tutorial Menu
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Loading Level: Game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.371587 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 370.
+Total: 0.245712 ms (FindLiveObjects: 0.033506 ms CreateObjectMapping: 0.013583 ms MarkObjects: 0.186246 ms  DeleteObjects: 0.011470 ms)
+
+Game Loaded
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 

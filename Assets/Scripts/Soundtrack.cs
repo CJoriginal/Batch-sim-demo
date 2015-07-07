@@ -19,7 +19,7 @@ public class Soundtrack : MonoBehaviour {
 	}
 
 	void Update(){
-		if (Application.loadedLevel == 3) {
+		if (Application.loadedLevel == 4) {
 			Destroy(this.gameObject);
 		} 
 
