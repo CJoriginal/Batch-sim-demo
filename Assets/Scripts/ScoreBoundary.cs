@@ -48,10 +48,12 @@ public class ScoreBoundary : MonoBehaviour {
 
 			int totalJobs = GameController.instance.totalJobs;
 			int completeJobs = GameController.instance.completeJobs;
+			int queueJobs = GameController.instance.queueJobs;
 
 			PlayerPrefs.SetInt ("Score", score);
 			PlayerPrefs.SetInt ("Total Jobs", totalJobs);
 			PlayerPrefs.SetInt ("Complete Jobs", completeJobs);
+			PlayerPrefs.SetInt ("Queued Jobs", queueJobs);
 
 			SceneManager.instance.NextScene();
 		}

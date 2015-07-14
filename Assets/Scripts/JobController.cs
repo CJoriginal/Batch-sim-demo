@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 
@@ -9,6 +10,8 @@ public class JobController : MonoBehaviour {
 
 	public bool dragging;
 	private float distance;
+	public int text;
+	public Text scaleText;
 
 	private Color mouseOverColor;
 	private Color originalColor;
@@ -20,14 +23,14 @@ public class JobController : MonoBehaviour {
 	private float speed;
 	public float lifeTime;
 	private float time;
-	private float jumpTime;
 
 	private bool work;
 	private bool spawnMove;
 	private bool touchWork;
 	private bool spawnCheck;
 	private bool touchEnd;
-	public bool moving;
+	private bool moving;
+	private bool queued;
 
 	public float laneBoundsPos;
 	public float laneBoundsSize;
@@ -42,6 +45,9 @@ public class JobController : MonoBehaviour {
 	public bool isSpawn;
 	public bool outOfBounds;
 	public bool inJob;
+	public bool exit;
+
+	public string scale;
 
 	public GameObject game;
 
@@ -65,17 +71,23 @@ public class JobController : MonoBehaviour {
 		dragging = false;
 		touchEnd = false;
 		moving = true;
+		queued = false;
+		exit = true;
 
 		mouseOverColor = Color.blue;
 		originalColor = GetComponent<Renderer> ().material.color;
 
 		GetComponent<SpriteRenderer> ().sprite = sprite[rand];
 
-		speed = 0.01f;
+		speed = 0.0075f;
 
-		lifeTime = 6.0f;
+		if (Application.loadedLevel != 0) {
+			lifeTime = 6.0f;
+		} else {
+			lifeTime = 12.0f;
+		}
+
 		time = 0.0f;
-		jumpTime = 3.0f;
 
 		location = jobTransform.position;
 
@@ -98,51 +110,80 @@ public class JobController : MonoBehaviour {
 		jobBoundsSizeY = GetComponent<BoxCollider2D>().bounds.size.y * 0.5f;
 
 		jobTransform.localScale = new Vector3 (0.5f, 0.5f, 1f);
-		size = new Vector3 (1, Random.Range (1, 6), 1);
+		size = new Vector3 (1, Random.Range(1, 6), 1);
+		scaleText.text = size.y.ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (time > 3.0f && !isSpawn) {
-			spawnCheck = false;
-		} else {
-			time += Time.deltaTime;
-		}
+		if (Application.loadedLevel == 0) {
 
-		if (isSpawn) {
-			spawnMove = true;
-			moving = true;
-			GetComponent<Rigidbody2D> ().WakeUp ();
+			jobTransform.localScale = new Vector3 (1, 1, 1);
+
 			if (lifeTime <= 0) {
-				Destroy (gameObject);
+				jobTransform.position = exitLoc;
+				lifeTime = 12f;
 			}
 
-			if (!dragging) {
-				lifeTime -= Time.deltaTime;
-			}
-		} else if (work) {
-			GetComponent<Rigidbody2D> ().isKinematic = true;
-			GetComponent<BoxCollider2D> ().isTrigger = false;
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, speed);
+
+			lifeTime -= Time.deltaTime;
+
 		} else {
-			GetComponent<Rigidbody2D> ().isKinematic = false;
-			GetComponent<BoxCollider2D> ().isTrigger = false;
 
-			if(!dragging){
-				moving = false;
+
+			if (time > 3.0f && !isSpawn) {
+				spawnCheck = false;
+			} else {
+				time += Time.deltaTime;
 			}
-		}
 
-		if (isWorking) {
-			work = true;
-			speed = 0.01f;
-		}
+			if (isSpawn) {
+				spawnMove = true;
+				moving = true;
+				GetComponent<Rigidbody2D> ().isKinematic = true;
+				if (lifeTime <= 0) {
+					scaleText.text = "";
+					Destroy (gameObject);
+				}
 
-		if ((laneBoundsPos + laneBoundsSize) > (jobBoundsPosX + jobBoundsSizeX) && (laneBoundsPos - laneBoundsSize) < (jobBoundsPosX - jobBoundsSizeX)) {
-			startJob = true;
-			isSpawn = false;
-		}
+				if (!dragging) {
+					lifeTime -= Time.deltaTime;
+				}
+			} else if (work) {
+				GetComponent<Rigidbody2D> ().isKinematic = true;
+				GetComponent<BoxCollider2D> ().isTrigger = false;
+			} else {
+				GetComponent<Rigidbody2D> ().isKinematic = false;
+				GetComponent<BoxCollider2D> ().isTrigger = false;
+				GetComponent<Renderer> ().material.color = originalColor;
 
-		GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
+				if (!dragging) {
+					moving = false;
+				}
+
+				if (!queued) {
+					GameController.instance.queueJobs++;
+					queued = true;
+				}
+			}
+
+			if (isWorking) {
+				work = true;
+				speed = 0.0075f;
+			}
+
+			if ((laneBoundsPos + laneBoundsSize) > (jobBoundsPosX + jobBoundsSizeX) && (laneBoundsPos - laneBoundsSize) < (jobBoundsPosX - jobBoundsSizeX)) {
+				startJob = true;
+				isSpawn = false;
+
+				if (dragging && !touchEnd && !inJob) {
+					GetComponent<Renderer> ().material.color = mouseOverColor;
+				}
+			}
+
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, speed);
+		}
 	}
 
 	void FixedUpdate() {
@@ -151,7 +192,8 @@ public class JobController : MonoBehaviour {
 
 		if (dragging) {
 
-			speed = 0.01f;
+			scaleText.text = "";
+			speed = 0.0075f;
 
 			if (!work) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -182,15 +224,19 @@ public class JobController : MonoBehaviour {
 			if (spawnMove) {
 				if(!spawnCheck){
 					location = new Vector2 (10.0f, -7.2f);
+					scaleText = GameController.instance.scales[5];
+					scaleText.text = size.y.ToString();
 				}
-				if (isSpawn || touchEnd) {
+				if (isSpawn || touchEnd || inJob) {
 					transform.position = location;
 					jobTransform.localScale = new Vector3 (0.5f, 0.5f, 1);
 					GetComponent<Rigidbody2D>().Sleep();
 					spawnMove = false;
-					isSpawn = false;
+					isSpawn = true;
 					speed = 0f;
 					touchEnd = false;
+					inJob = false;
+					scaleText.text = size.y.ToString();
 				}
 			}
 
@@ -198,6 +244,7 @@ public class JobController : MonoBehaviour {
 				position = jobTransform.localPosition;
 				position.y -= speed;
 				transform.position = position;
+				scaleText.text = "";
 			}
 
 			if (jobExit && !isSpawn && !isWorking) {
@@ -259,24 +306,10 @@ public class JobController : MonoBehaviour {
 		speed = vel;
 	}
 
-	void OnMouseEnter()
-	{
-		if (Application.loadedLevel != 5) {
-			GetComponent<Renderer> ().material.color = mouseOverColor;
-		}
-	}
-	
-	void OnMouseExit()
-	{
-		if (Application.loadedLevel != 5) {
-			GetComponent<Renderer> ().material.color = originalColor;
-		}
-	}
-	
 	void OnMouseDown()
 	{
-		if (Application.loadedLevel != 5) {
-			if(moving){
+		if (Application.loadedLevel == 3) {
+			if(!isWorking){
 				distance = Vector3.Distance (transform.position, Camera.main.transform.position);
 				exitLoc.y = jobTransform.position.y;
 				exitLoc.x = jobTransform.position.x;
@@ -289,7 +322,7 @@ public class JobController : MonoBehaviour {
 	
 	void OnMouseUp()
 	{
-		if (Application.loadedLevel != 5) {
+		if (Application.loadedLevel == 3) {
 			dragging = false;
 		}
 	}
@@ -301,7 +334,7 @@ public class JobController : MonoBehaviour {
 				touchWork = true;
 				isWorking = true;
 
-				speed = 0.01f;
+				speed = 0.0075f;
 	
 				if (this.gameObject.layer == 12) {
 					value = 10;
@@ -360,30 +393,10 @@ public class JobController : MonoBehaviour {
 			}
 		}
 
-		/*if (col.gameObject.tag == "Lane" && !dragging) {
-			Vector3 pos = jobTransform.position;
-
-			if(col.gameObject.name == "Lane 6"){
-				pos.x = 5.03f;
-			}
-			if(col.gameObject.name == "Lane 5"){
-				pos.x = 2.94f;
-			}
-			if(col.gameObject.name == "Lane 4"){
-				pos.x = 0.87f;
-			}
-			if(col.gameObject.name == "Lane 3"){
-				pos.x = -1.15f;
-			}
-			if(col.gameObject.name == "Lane 2"){
-				pos.x = -3.13f;
-			}
-			if(col.gameObject.name == "Lane 1"){
-				pos.x = -5.15f;
-			}
-
-			jobTransform.position = pos;
-		}*/
+		if (exit) {
+			inJob = false;
+			exit = false;
+		}
 
 		if(col.gameObject.tag == "Respawn"){
 			isSpawn = true;
@@ -392,13 +405,20 @@ public class JobController : MonoBehaviour {
 
 		if (col.gameObject.tag == "Job" && dragging) {
 			inJob = true;
-		}
+		} 
 	}
 
 	void OnTriggerExit2D (Collider2D col){
 		if (col.gameObject.tag == "Job") {
-			inJob = false;
 			touchWork = false;
+			inJob = false;
+			exit = true;
 		}
+	}
+
+	void OnCollisionExit2D(Collision2D col){
+		touchWork = false;
+		inJob = false;
+		exit = true;
 	}
 }

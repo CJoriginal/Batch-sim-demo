@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
@@ -16,9 +17,12 @@ public class GameController : MonoBehaviour {
 	private GameObject queue;
 	private GameObject job;
 
+
 	public int totalJobs;
+	public int queueJobs;
 	public int completeJobs;
 	public GameObject[] prefabToSpawn;
+	public Text[] scales;
 	public int countSpawn;
 
 	
@@ -28,42 +32,42 @@ public class GameController : MonoBehaviour {
 
 		spawnTimer = 6.0f;
 		countSpawn = 0;
-		spawnLocation[0] = new Vector2 (10.0f, 0.3f);
-		spawnLocation[1] = new Vector2 (10.0f, -1.2f);
-		spawnLocation[2] = new Vector2 (10.0f, -2.7f);
-		spawnLocation[3] = new Vector2 (10.0f, -4.2f);
-		spawnLocation[4] = new Vector2 (10.0f, -5.7f);
+		spawnLocation [0] = new Vector2 (10.0f, 0.3f);
+		spawnLocation [1] = new Vector2 (10.0f, -1.2f);
+		spawnLocation [2] = new Vector2 (10.0f, -2.7f);
+		spawnLocation [3] = new Vector2 (10.0f, -4.2f);
+		spawnLocation [4] = new Vector2 (10.0f, -5.7f);
 
 		totalJobs = 0;
 		completeJobs = 0;
+		queueJobs = 0;
 
 		queue = new GameObject ();
 		queue.name = "Queue";
 
 		for (int x = 0; x < 5; x++) {
-			rand = Random.Range(0, 8);
-			job = Instantiate(prefabToSpawn[rand], spawnLocation[x], Quaternion.identity) as GameObject;
+			rand = Random.Range (0, 8);
+			job = Instantiate (prefabToSpawn [rand], spawnLocation [x], Quaternion.identity) as GameObject;
 			job.gameObject.name = "Job " + totalJobs;
-			job.GetComponent<Rigidbody2D>().isKinematic = true;
 			job.transform.parent = queue.transform;
+			job.GetComponent<JobController>().scaleText = scales[x];
 			totalJobs++;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		rand = Random.Range(0, 8);
-
-		if(spawnTimer <= 0){
-			if(countSpawn == 5){
+		if (spawnTimer <= 0) {
+			if (countSpawn == 5) {
 				countSpawn = 0;
 			}
 
-			job = Instantiate(prefabToSpawn[rand], spawnLocation[countSpawn], Quaternion.identity) as GameObject;
+			rand = Random.Range (0, 8);
+
+			job = Instantiate (prefabToSpawn [rand], spawnLocation [countSpawn], Quaternion.identity) as GameObject;
 			job.gameObject.name = "Job " + totalJobs;
 			job.transform.parent = queue.transform;
-			job.GetComponent<Rigidbody2D>().isKinematic = true;
+			job.GetComponent<JobController>().scaleText = scales[countSpawn];
 			totalJobs++;
 			spawnTimer = 1.5f;
 			countSpawn++;

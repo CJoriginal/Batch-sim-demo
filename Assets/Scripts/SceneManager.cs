@@ -19,16 +19,15 @@ public class SceneManager : MonoBehaviour {
 
 		Debug.Log ("Main Menu Loaded");
 
-		scenes = new string[6];
+		scenes = new string[5];
 
 		index = 0;
 
 		scenes [0] = "Demo Scene";
 		scenes [1] = "Main Menu";
 		scenes [2] = "Info Scene";
-		scenes [3] = "Tutorial Menu";
-		scenes [4] = "Game";
-		scenes [5] = "End Scene";
+		scenes [3] = "Game";
+		scenes [4] = "End Scene";
 
 	}
 
@@ -80,7 +79,7 @@ public class SceneManager : MonoBehaviour {
 
 		index++;
 
-		if (index > 5) {
+		if (index > 4) {
 			index = 1;
 		}
 
@@ -94,7 +93,7 @@ public class SceneManager : MonoBehaviour {
 
 	IEnumerator LoadLevel() {
 
-		if (Application.loadedLevel == 6) {
+		if (Application.loadedLevel == 5) {
 			index = 1;
 		}
 
